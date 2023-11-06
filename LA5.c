@@ -242,5 +242,32 @@ int main() {
     
     */
 
+   /*   COUNTING DUPLICATES OF EACH
+    int arr[] = {1, 30, 30, 50, 77, 77, 9,50,23,1,39,50,77};
+    int size = sizeof(arr) / sizeof(int);
+    int count = 0;
+
+    for (int i = 0; i < size; i++) {
+        count = 0; // Reset count for each element
+        for (int j = i + 1; j < size; j++) {
+            if (arr[i] == arr[j]) {
+                count++;
+                for (int k = j; k < size - 1; k++) {
+                    arr[k] = arr[k + 1];
+                }
+                size--;
+                j--;
+            }
+        }
+        if (count > 0) {
+            printf("Element %d has %d duplicate(s)\n", arr[i], count);
+        }
+    }
+
+    printf("\nArray with duplicates removed: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    */
   return 0;
 }
