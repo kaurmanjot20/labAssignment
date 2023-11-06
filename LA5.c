@@ -223,31 +223,23 @@ int main() {
     */
 
    /*   REMOVING DUPLICATES FROM AN ARRAY
-   int arr[] = {1, 2, 2, 3, 4, 4, 5};
-    int size = sizeof(arr) / sizeof(arr[0]);
-
-    int uniqueSize = 0;
-    int uniqueArray[size];
-
-    for (int i = 0; i < size; i++) {
-        int found = 0;
-
-        for (int j = 0; j < uniqueSize; j++) {
-            if (arr[i] == uniqueArray[j]) {
-                found = 1;
-                break;
+   int arr[]={1,30,30,50,77,77,9};
+    int size = sizeof(arr)/sizeof(int);
+    for(int i=0;i<size;i++){
+        for(int j=i+1;j<size;j++){
+            if(arr[i]==arr[j]){
+                for(int k=j;k<size-1;k++){
+                    arr[k]=arr[k+1];
+                }
+                size--;
+                j--;
             }
         }
-
-        if (!found) {
-            uniqueArray[uniqueSize++] = arr[i];
-        }
     }
-
-    printf("Array after removing duplicates: ");
-    for (int i = 0; i < uniqueSize; i++) {
-        printf("%d ", uniqueArray[i]);
+    for(int i=0;i<size;i++){
+        printf(" %d ",arr[i]);
     }
+    
     */
 
   return 0;
