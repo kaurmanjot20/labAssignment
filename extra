@@ -1,0 +1,25 @@
+//extracting substring
+#include<stdio.h>
+#include<string.h>
+void substr(char[],int,int,char[]);
+
+int main( ) { 
+	char ogStr[]="Hello WorldIlove Music and Coding...";
+	int start =7;
+	int length = 6;
+	char newStr[20];
+	substr(ogStr,start,length,newStr);
+	printf("\nOriginal : %s",ogStr);
+	printf("\nExtracted : %s", newStr);
+}
+
+void substr(char input[],int start,int length, char output[]){
+	int i,j;
+	
+	//copy substring from input
+	for(i=start,j=0;j<length && input[i]!='\0';++i,j++){
+		output[j]=input[i];
+	}
+	//add null terminator to output string
+	output[j]='\0';
+}
