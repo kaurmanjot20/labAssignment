@@ -23,3 +23,100 @@ void substr(char input[],int start,int length, char output[]){
 	//add null terminator to output string
 	output[j]='\0';
 }
+
+//swapping
+main(){ 
+int a = 10, b = 20 ; 
+swapv ( a, b ) ; 
+printf ( "\na = %d b = %d", a, b ) ; 
+} 
+swapv ( int x, int y ) { 
+int t  = x ; 
+x = y ; y = t ; 
+printf ( "\nx = %d y = %d", x, y ) ; 
+} 
+
+
+//pointer swapping (call by reference or address)
+main( ) { 
+int a = 10, b = 20 ; 
+swapr ( &a, &b ) ; 
+printf ( "\na = %d, b = %d", a, b ) ;  
+} 
+swapr( int *x, int *y ) { 
+int t  = *x ; *x = *y ; *y = t ; 
+} 
+
+//1d array and pointer
+main( ) { 
+int a[3]={1,2,3},*b,i;
+b=a;  //pointer to array 
+for(i=0;i<3;i++) {
+printf("\n %d %d",a[i],b[i]);
+}} 
+
+main( ){
+char A[] = "Hello", B[10] ;
+char *C = "Good Morning", *D;
+//B = A ; /* error */
+D = C ; /* Okay */
+printf("%s",D);
+} // cannot assign array to array, but can assign pointer to pointer 
+
+//pointers are dynamic but arrays are static
+main( ) { 
+char A[] = "Hello" ;
+ char *B = "Hello" ;    
+//A = "Bye" ; /* error */ 
+B = "Bye" ; /* works */
+printf("%s",B); 
+}
+
+//multiple returns
+AreaPeri(int r, float *A, float *P){
+*A = 3.14*r*r;  *P = 2*3.14*r;
+}
+main( ){
+int r;  float A,P;
+printf("\nEnter radius: " );   scanf("%d",&r);
+AreaPeri(r,&A,&P);  printf("Area = %f, Peri = %f",A,P);
+}
+
+//STRUCTURES
+main( ){
+struct book{
+char name[10]; float price; int pages;
+};       //DON'T FORGET THIS SEMI COLON
+struct book b[3]; int i;
+printf ( "\nEnter names,prices,pages of 3 books\n" ) ;
+for(i=0;i<3;i++)
+scanf("%s%f%d",&b[i].name, &b[i].price, &b[i].pages );
+printf ( "\nAnd this is what you entered" ) ;
+for(i=0;i<3;i++)
+printf("\n%s %f %d", b[i].name, b[i].price, b[i].pages ) ;
+}
+
+/*
+Dot operator is performed on structure variables
+Arrow operator is performed on structure pointers
+*/
+main(){
+struct A{
+int i;
+};
+struct A a, *b;
+a.i=99; b=&a;
+printf("%d and %d",a.i, b->i);
+}  
+
+//struct in functions
+struct A{
+int i; float f;
+};
+main(){
+struct A a={-5,2.43};   fun(a);
+}
+fun(struct A a){
+printf("%d and %f",a.i, a.f);
+}
+
