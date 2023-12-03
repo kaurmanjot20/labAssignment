@@ -120,3 +120,19 @@ fun(struct A a){
 printf("%d and %f",a.i, a.f);
 }
 
+//************* ARRAYS *******************
+//inserting an element
+int arr[5] ={1,2,3,4}, nElts=4; 
+//....
+for(i=nElts; i>=pos; i--)  arr[i] = arr[i-1];
+    
+arr[pos-1] = num;
+nElts++; 
+//…
+
+//deletion
+for(i=pos-1; i<nElts-1; i++)
+    arr[i] = arr[i + 1];
+   
+nElts--;
+
